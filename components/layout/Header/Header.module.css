@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
+
 }
 
 .top__bar{
@@ -14,4 +15,34 @@ color: white;
 justify-content: end;
 align-items: center;
 padding:0.5rem;
+}
+
+.top__bar_button{
+    display: flex;
+    color: white;
+    justify-content: end;
+    align-items: center;
+}
+
+.header__nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
+    background-color: rgba(244, 244, 244, 0.5);
+    margin-top: 2rem;
+    transition: background-color 0.5s ease, margin 0.5s ease;
+}
+
+.header__nav_top{
+    margin-top: 2rem;
+    background-color: rgba(244, 244, 244, 0.5);
+}
+
+.header__nav_scroll{
+    margin-top: 0rem;
+    background-color: var(--white-primary);
 }
