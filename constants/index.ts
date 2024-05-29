@@ -1,18 +1,22 @@
 export const routes = [
     {
-        name: "Home",
+        name: "Inicio",
         route: "/"
     },
     {
-        name: "About",
+        name: "sobre nosotros",
         route: "/about"
     },
     {
-        name: "Services",
+        name: "Servicios",
         route: "/services"
     },
     {
-        name: "Gallery",
+        name: "Galeria",
         route: "/gallery"
+    },
+    {
+        name: "Contactanos",
+        route: "/contact"
     },
 ]

@@ -1,0 +1,50 @@
+.hero{
+    display: flex;
+    min-width:100%;
+    height: 100vh;
+    background-image: url('/hero.jpg');
+    background-size: cover; 
+    background-position: center;
+    z-index:10;
+  position:absolute;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+  }
+
+.hero__text{
+    display:flex;
+    flex-direction: column;
+    width:max-content;
+    height: max-content;
+    color: var(--white-primary);
+    position: relative;
+    top:10rem;
+    left: 4rem;
+    z-index: 10;
+    animation: moveAndFadeIn 2s forwards;
+}
+
+.hero__text > h2{
+    font-size: 3rem;
+  
+}
+
+@keyframes moveAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translatey(+150px); /* Inicia fuera de la pantalla a la izquierda */
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0); /* Termina en su posición original */
+  }
+}

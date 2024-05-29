@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import styles from "./Header.module.css"
 import Image from 'next/image'
-import Nav from '@/components/Nav/Nav'
+import Nav from '@/components/layout/Nav/Nav'
 
 function Header() {
 
@@ -43,7 +43,7 @@ function Header() {
         <Image
         src="/icons/logo-rec.png"
         alt="logo"
-        height={90}
+        height={80}
         width={300}/>
         <Nav/>
         </div>
