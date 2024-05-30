@@ -1,70 +1,81 @@
-.body{
-    display: flex;
-    flex-direction: column;
-    width:100%;
-    height: auto;
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
-.body__title{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background: var(--white-primary);
-    padding: 4rem;
+.body__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background: var(--white-primary);
+  padding: 4rem;
 }
 
-
-.body__title h2{
-    color: var(--black-primary)
+.body__title h2 {
+  color: var(--black-primary);
 }
 
-.img{
-    min-width: 50%;
+.img {
+  min-width: 50%;
 }
 
-.service{
-    display: flex;
-    width:100%;
-    height: auto;
-    flex-direction: row;
+.service {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: row;
 }
 
-.serviceReverse{
-    display: flex;
-    width:100%;
-    height: auto;
-    flex-direction: row-reverse;
+.serviceReverse {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: row-reverse;
 }
 
-.service__content{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 4rem 2rem 4rem;
-
+.service__content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem 2rem 4rem;
 }
 
-.service__content h4{
-font-size: 0.9rem;
-font-weight: 500;
-color: var(--red-primary);
-margin-bottom: 1.5rem;
+.service__content h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--red-primary);
+  margin-bottom: 1.5rem;
 }
 
-.service__content h2{
-   
-    color: var(--black-primary);
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-    }
+.service__content h2 {
+  color: var(--black-primary);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
 
-    .service__content p{
-   
-        color: var(--black-primary);
-        margin-bottom: 1rem;
-        font-weight: 200;
-        font-size: 0.9rem;
-        }
+.service__content p {
+  color: var(--black-primary);
+  margin-bottom: 1rem;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
 
+@media screen and (max-width: 768px) {
+    .service {
+        display: flex;
+        flex-direction:column;
+        width: 100%;
+        height: auto;
+      }
+
+      .serviceReverse{
+        flex-direction:column;
+      }
+      .service__content {
+        padding: 2rem 1rem 2rem 1rem;
+      }
+}
