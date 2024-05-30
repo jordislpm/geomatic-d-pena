@@ -72,10 +72,3 @@
 }
 }
 
-@media screen and (max-width: 1100px) {
-  .hero{
-    min-height: 50vh;
-    padding:2rem;
-
-}
-}

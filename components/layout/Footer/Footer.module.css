@@ -1,0 +1,35 @@
+.footer{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    background: var(--black-secundary);
+    color: var(--gray-light);
+    padding: 2rem 4rem 2rem 4rem;
+}
+
+.content{
+    display: flex;
+}
+
+
+.info__contact p{
+display: flex;
+align-items: center;
+gap:0.5rem;
+width:100%;
+height: auto;
+}
+
+.info__options{
+display:flex;
+width:100%;
+gap:2rem;
+
+}
+
+@media screen and (max-width: 768px) {
+    .content{
+        flex-direction:column;
+    }
+
+  }
