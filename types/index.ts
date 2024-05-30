@@ -10,3 +10,8 @@ export interface HomeServicesProps{
     img: string;
     link: string;
 }
+
+export interface ButtonPrincipalProps{
+    title?: string;
+    type?: "primary" | "secundary";
+}

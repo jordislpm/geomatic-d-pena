@@ -2,7 +2,9 @@
   --max-width: 1100px;
   --border-radius: 12px;
   --white-primary: #FFFFFF;
-  --black-primary: #000000;
+ 
+  --black-primary:  #333333;
+  --black-dark: #000000;
   --red-primary: #F20707;
   --gray-primary: #B7D2CE;  
   --gray-light: #F4F4F4;

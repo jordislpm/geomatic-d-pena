@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from "./Hero.module.css"
+import styles from "./HomeHero.module.css"
 
 
-function Hero() {
+function HomeHero() {
   return (
     <div className={styles.hero}>
         <div className={styles.hero__text}>
@@ -13,4 +13,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default HomeHero

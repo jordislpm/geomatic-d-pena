@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import HomeView from "@/screens/Home";
-import Hero from "@/components/Home/Hero/Hero";
+import HomeView from "@/app/home/page";
+import Hero from "@/components/Home/HomeHero/HomeHero";
 
 export default function Home() {
   return (

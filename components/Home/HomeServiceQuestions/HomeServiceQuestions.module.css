@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+    background: var(--red-primary);
+    padding:2rem 4rem;
+}
+
+.content h3{
+    color: var(--white-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}

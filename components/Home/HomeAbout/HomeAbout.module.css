@@ -33,11 +33,8 @@ padding: 0;
     color: var(--red-primary)
 }
 
-.left h2{
-    color: var(--red-primary)
-}
-
 .left p{ 
+    color: var(--black-primary)
 }
 .left hr {
   
@@ -60,6 +57,11 @@ padding: 0;
 
   .right__content h3 {
 margin-bottom: 1rem;
+color: var(--black-dark)
   }
 
+
+  .right__content p {
+    color: var(--black-primary)
+      }
 
