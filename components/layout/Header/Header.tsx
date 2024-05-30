@@ -11,7 +11,6 @@ function Header() {
     useEffect(() => {
         const handleScroll = () => {
             const isTop = window.scrollY === 0;
-            console.log(window.scrollY)
             if (!isTop && !scroll) {
                 setScroll(true);
             } else if (isTop && scroll) {
@@ -54,7 +53,8 @@ function Header() {
         src="/icons/logo-rec.png"
         alt="logo"
         height={50}
-        width={230}/>
+        width={230}
+        />
         <Nav 
         scroll={scroll}
         />

@@ -68,7 +68,13 @@ padding:0.5rem;
         display: none;
         }
 
+        .header__nav img{
+            height: 3rem;
+            width: 8rem;
+        }
+
         .header__nav{
             margin-top: 0;
+            padding: 2rem 1rem;
         }
   }
