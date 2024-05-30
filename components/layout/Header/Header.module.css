@@ -1,7 +1,7 @@
 .header{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 100%;
     height: auto;
     z-index:100;
 }
@@ -34,7 +34,7 @@ padding:0.5rem;
     padding: 0 4rem 0 4rem;
     background-color: rgba(244, 244, 244, 0.5);
     margin-top: 2rem;
-    transition: background-color 0.5s ease, margin 0.5s ease;
+    transition: background-color 0.1s ease, margin 0.1s ease;
     z-index:100;
 }
 
