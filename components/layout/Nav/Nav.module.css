@@ -25,7 +25,9 @@
     position: relative;
     font-weight: bold;
     color: var(--black-primary);
+    transition: padding 0.2s ease;
   }
+  
   
 
   
@@ -35,7 +37,7 @@
     left: 0;
     bottom: 0.6rem;
     width: 0;
-    height: 0.2rem;
+    height: 0.1rem;
     background-color: var(--red-primary);
     transition: width 0.3s;
   }
@@ -48,4 +50,8 @@
     background: var(--red-primary);
     border-radius: 0.5rem;
     color:var(--white-primary)
+  }
+
+  .nav__scroll{
+    padding: 0.5rem;
   }

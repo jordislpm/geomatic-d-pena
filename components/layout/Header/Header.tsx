@@ -53,9 +53,11 @@ function Header() {
         <Image
         src="/icons/logo-rec.png"
         alt="logo"
-        height={80}
-        width={300}/>
-        <Nav/>
+        height={50}
+        width={230}/>
+        <Nav 
+        scroll={scroll}
+        />
         </div>
         
     </header>

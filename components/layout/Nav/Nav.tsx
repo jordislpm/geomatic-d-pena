@@ -4,24 +4,22 @@ import Link from 'next/link'
 import { routes } from '@/constants'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
-function Nav() {
+
+interface NavProps{
+    scroll: boolean
+}
+
+function Nav({scroll}: NavProps) {
 
     const router = useRouter();
     const path = usePathname();
     const params = useSearchParams();
 
-    useEffect(()=>{
-        console.log("router: " , router);
-        console.log("path: " , path);
-        console.log("params: " , params);
-    },[router, params, path])
-
-
-    return (
+     return (
         <nav className={styles.nav}>
             <ul>
                 {routes.map((route) => (
-                    <Link className={`${styles.link} ${route.route === path ? styles.active : ''}`} key={route.name} href={route.route}>{route.name}</Link>
+                    <Link className={`${styles.link} ${route.route === path ? styles.active : ''} ${scroll ? styles.nav__scroll : ""}`} key={route.name} href={route.route}>{route.name}</Link>
                 ))}
             </ul>
         </nav>
