@@ -7,6 +7,7 @@
     padding: 2rem 4rem 2rem 4rem;
 }
 
+
 .content{
     display: flex;
     width:100%;
@@ -14,6 +15,11 @@
     gap:2rem;
 }
 
+.info__contact h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;    
+}
 
 .info__contact p{
 display: flex;
@@ -21,6 +27,11 @@ align-items: center;
 gap:0.5rem;
 width:100%;
 height: auto;
+margin-bottom:1rem;
+}
+
+.info__contact_number{
+    padding: 2rem 0rem 0rem 2rem;
 }
 
 .info__options{
@@ -71,5 +82,8 @@ gap:1rem;
     .content{
         flex-direction:column;
     }
-
+    .info__options{
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    }
   }

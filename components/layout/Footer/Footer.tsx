@@ -7,6 +7,8 @@ import { routes } from '@/constants'
 import Link from 'next/link'
 import { servicesData } from '@/constants/services'
 import { usePathname } from 'next/navigation'
+import GoogleMaps from '@/components/share/GoogleMaps/GoogleMaps'
+import { company_name } from '@/constants'
 
 
 
@@ -18,7 +20,7 @@ function Footer() {
         <div className={styles.info}>
           <div className={styles.info__contact}>
             <h2>
-              Geomatic D&apos; peña
+            {company_name.toLocaleUpperCase()}
             </h2>
             <p>
               <Image src={contacts_data.address.logo}
@@ -34,7 +36,7 @@ function Footer() {
                 height={30} />
               {contacts_data.email.info}
             </p>
-            <p>
+            <p className={styles.info__contact_number}>
               + 1 ( 647 ) 667 9262
             </p>
           </div>
@@ -68,8 +70,8 @@ function Footer() {
           </div>
           <div className={styles.info__option}>
             <h3>UBICACION</h3>
-
-          </div>
+            <GoogleMaps/>
+           </div>
         </div>
         <div>
 

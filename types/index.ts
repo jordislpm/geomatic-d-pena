@@ -15,3 +15,8 @@ export interface ButtonPrincipalProps{
     title?: string;
     type?: "primary" | "secundary";
 }
+
+export interface GoogleMapsProps{
+    height?: string,
+    width?: string;
+}

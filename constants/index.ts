@@ -1,3 +1,6 @@
+export const company_name="Geomatic D' peña"
+
+
 export const routes = [
     {
         name: "Inicio",

@@ -25,7 +25,7 @@ function HomeServices() {
                         height={350}
                     />
                     <div className={styles.service__content}>
-                        <h4>SERVICIO {service.subTitle.toUpperCase()} </h4>
+                        <h4>SERVICIOS DE {service.subTitle.toUpperCase()} </h4>
                         <h2>{service.title}</h2>
                         <p>{service.description}</p>
                         <ButtonPrincipal />

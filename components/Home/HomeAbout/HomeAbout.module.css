@@ -63,6 +63,13 @@
   color: var(--black-primary);
 }
 
+.right__content_text{
+    display: flex;
+width:100%;
+justify-content:center;
+align-items:center;
+}
+
 @media screen and (max-width: 768px) {
   .body {
     display: flex;
@@ -73,5 +80,11 @@
     display:flex;
     justify-content:center;
     align-items:center;
+  }
+
+  .right__content {
+ 
+    width: 100%;
+ 
   }
 }
