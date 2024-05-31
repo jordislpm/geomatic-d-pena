@@ -1,9 +1,17 @@
+"use client"
 import React from 'react'
 import styles from "./Footer.module.css"
 import Image from 'next/image'
 import { contacts_data } from '@/constants/contacts'
+import { routes } from '@/constants'
+import Link from 'next/link'
+import { servicesData } from '@/constants/services'
+import { usePathname } from 'next/navigation'
+
+
 
 function Footer() {
+  const path = usePathname();
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
@@ -27,17 +35,39 @@ function Footer() {
               {contacts_data.email.info}
             </p>
             <p>
-            + 1 ( 647 ) 667 9262
+              + 1 ( 647 ) 667 9262
             </p>
           </div>
         </div>
         <div className={styles.info__options}>
           <div className={styles.info__option}>
             <h3>COMPAÑIA</h3>
-
+            <ul className={styles.footer__nav}>
+              {routes.map((route) => (
+                <Link
+                  className={`${styles.link} ${route.route !== path ? styles.active : ''}`}
+                  key={route.name}
+                  href={route.route}>
+                  {route.name}
+                </Link>
+              ))}
+            </ul>
           </div>
           <div className={styles.info__option}>
             <h3>SERVICIOS</h3>
+            <ul className={styles.footer__nav}>
+              {servicesData.map((service) => (
+                <Link
+                className={`${styles.link} ${ styles.active}`}
+                  key={service.title}
+                  href={service.link}>
+                  {service.subTitle}
+                </Link>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.info__option}>
+            <h3>UBICACION</h3>
 
           </div>
         </div>
