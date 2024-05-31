@@ -23,6 +23,7 @@ function HomeServices() {
                         className={styles.img}
                         width={500}
                         height={350}
+                        objectPosition="center" 
                     />
                     <div className={styles.service__content}>
                         <h4>SERVICIOS DE {service.subTitle.toUpperCase()} </h4>

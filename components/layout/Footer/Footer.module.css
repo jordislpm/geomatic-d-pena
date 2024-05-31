@@ -79,11 +79,15 @@ gap:1rem;
 
 
 @media screen and (max-width: 768px) {
+
+    .footer{
+        padding: 1rem 2rem 2rem 1rem;
+    }
     .content{
         flex-direction:column;
     }
     .info__options{
         display:grid;
-        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
   }
