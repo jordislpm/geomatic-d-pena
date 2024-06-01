@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.main__options{
+    display:flex;
+}
+
+.option{
+    background:var(--gray-light);
+    padding:1rem;
+    color: var(--black-primary);
+    cursor: pointer;
+}
+
+.option__active{
+    background:var(--red-primary);
+    color: var(--white-primary);
+    border-radius: 0.5rem 0.5rem 1px 1px;
+}

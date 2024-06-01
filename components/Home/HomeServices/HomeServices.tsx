@@ -26,8 +26,8 @@ function HomeServices() {
                         objectPosition="center" 
                     />
                     <div className={styles.service__content}>
-                        <h4>SERVICIOS DE {service.subTitle.toUpperCase()} </h4>
-                        <h2>{service.title}</h2>
+                        <h4>SERVICIOS DE {service.title.toUpperCase()} </h4>
+                        <h2>{service.subTitle}</h2>
                         <p>{service.description}</p>
                         <ButtonPrincipal />
                     </div>

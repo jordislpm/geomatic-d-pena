@@ -1,0 +1,29 @@
+.service__section{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    background: var(--white-primary);
+    padding: 3rem 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.service__section p{
+   color: var(--black-primary);
+   text-align: center;
+   margin-bottom: 2rem;
+}
+
+.service__section h3{
+    color: var(--black-primary);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+ }
+
+ .service__section h4{
+    color: var(--black-primary);
+    font-weight: 200;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+ }

@@ -63,7 +63,7 @@ function Footer() {
                 className={`${styles.link} ${ styles.active}`}
                   key={service.title}
                   href={service.link}>
-                  {service.subTitle}
+                  {service.title}
                 </Link>
               ))}
             </ul>
