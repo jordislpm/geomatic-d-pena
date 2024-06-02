@@ -14,6 +14,7 @@ export interface HomeServicesProps{
 export interface ButtonPrincipalProps{
     title?: string;
     type?: "primary" | "secundary";
+    buttonAction?: ()=> void;
 }
 
 export interface GoogleMapsProps{
@@ -33,4 +34,10 @@ export interface ServiceCategory {
     link: string;
     img: string;
     services: Service[];
+}
+
+export interface ServiceCardProps{
+    img?: string;
+    title: string;
+    description: string;
 }

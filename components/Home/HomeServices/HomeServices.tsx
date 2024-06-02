@@ -1,14 +1,26 @@
+"use client"
 import React from 'react'
 import styles from "./HomeServices.module.css"
 import { HomeServicesProps } from '@/types'
 import Image from 'next/image'
 import ButtonPrincipal from '@/components/share/ButtonPrincipal/ButtonPrincipal'
 import { servicesData } from '@/constants/services'
+import { useRouter, useSearchParams } from 'next/navigation'
+
 
 
 
 
 function HomeServices() {
+
+    const router = useRouter()
+    const searhParams = new URLSearchParams(window.location.search);
+
+    const goToService = (route: string)=>{
+        searhParams.set("service", route)
+        router.push(`/services?${searhParams.toString()}`)
+    }
+
     return (
         <section className={styles.body}>
             <div className={styles.body__title}>
@@ -29,7 +41,7 @@ function HomeServices() {
                         <h4>SERVICIOS DE {service.title.toUpperCase()} </h4>
                         <h2>{service.subTitle}</h2>
                         <p>{service.description}</p>
-                        <ButtonPrincipal />
+                        <ButtonPrincipal buttonAction={()=>goToService(service.title)}/>
                     </div>
                 </div>
             ))}

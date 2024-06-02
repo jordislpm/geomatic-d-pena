@@ -2,11 +2,16 @@ import ServicesGeneral from '@/components/Services/ServicesGeneral/ServicesGener
 import ServicesHero from '@/components/Services/ServicesHero/ServicesHero'
 import React from 'react'
 
-function Services() {
+function Services({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <>
     <ServicesHero/>
     <ServicesGeneral/>
+    {children}
     </>
   )
 }
