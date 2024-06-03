@@ -12,6 +12,7 @@
    color: var(--black-primary);
    text-align: center;
    margin-bottom: 2rem;
+   font-size: 1.1rem;
 }
 
 .service__section h3{
@@ -26,4 +27,12 @@
     font-weight: 200;
     font-size: 0.8rem;
     margin-bottom: 1rem;
+    text-align: center;
  }
+
+ @media screen and (max-width: 768px) {
+    .service__section{
+
+        padding: 1rem 1rem;
+    }
+}

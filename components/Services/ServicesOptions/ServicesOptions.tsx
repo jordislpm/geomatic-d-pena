@@ -35,10 +35,12 @@ function ServicesOptions() {
 
         const handleResize = () => {
             const windowWidth = window.innerWidth;
-            if (windowWidth <= 1000) {
-              margin=25;
+            if (windowWidth < 768) {
+                margin=70;
             }
           };
+
+          handleResize();
 
         if (searchParams.has("service", "Procesos de Mensura")) {
             setServices("Procesos de Mensura");
@@ -53,14 +55,10 @@ function ServicesOptions() {
                 window.scrollTo({ top: topOffset, behavior: 'smooth' });
             }
 
-            handleResize();
-            window.addEventListener('resize', handleResize);
-            return () => {
-              window.removeEventListener('resize', handleResize);
-            };
+           
         }
 
-
+      
 
     }, [pathname, searchParams])
 

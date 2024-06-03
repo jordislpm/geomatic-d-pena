@@ -13,6 +13,14 @@
     -3px -3px 10px rgba(255, 255, 255, 0.8);
   padding: 1rem  0.5rem 0.5rem 0.5rem;
   border-radius: 0.2rem;
+  border-bottom: 0.1rem solid var(--red-primary);
+}
+
+.img{
+    background:red;
+    border-radius:50%;
+    overflow:hidden;
+    border: 0.1rem solid var(--white-primary);
 }
 
 .card h2 {
@@ -24,4 +32,28 @@
 .card p {
   font-size: 0.8rem;
   min-height:6rem;
+  color: var(--black-primary);
+}
+
+.card:hover{
+    color: var(--white-primary);
+    background: var(--black-primary);
+
+
+    
+}
+
+.card:hover p{
+    color: var(--white-primary);
+
+}
+
+@media screen and (max-width: 768px) {
+   .card{ 
+    min-width: 100%;
+    height: auto;}
+
+    .card p {
+        font-size: 0.9rem;
+      }
 }

@@ -10,7 +10,8 @@ function ServiceCard({title,logo,description}:ServiceCardProps) {
         <Image src={logo}
         alt={title}
         width={65}
-        height={65}/>
+        height={65}
+        className={styles.img}/>
         <h2>{title.toLocaleUpperCase()}</h2>
         <p>
             {description}

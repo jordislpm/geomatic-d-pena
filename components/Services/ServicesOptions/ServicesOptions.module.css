@@ -17,6 +17,7 @@
     padding:1rem;
     color: var(--black-primary);
     cursor: pointer;
+    text-align: center;
 }
 
 .option__active{
@@ -31,4 +32,9 @@
     height: auto;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap:1rem;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+
 }
