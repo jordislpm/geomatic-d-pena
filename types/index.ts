@@ -25,6 +25,7 @@ export interface GoogleMapsProps{
 export interface Service {
     title: string;
     description: string;
+    logo: string;
 }
 
 export interface ServiceCategory {
@@ -37,7 +38,7 @@ export interface ServiceCategory {
 }
 
 export interface ServiceCardProps{
-    img?: string;
+    logo: string;
     title: string;
     description: string;
 }

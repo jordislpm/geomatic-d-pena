@@ -50,7 +50,7 @@ function Header() {
         </div>
         <div className={`${styles.header__nav} ${scroll ? styles.header__nav_scroll: styles.header__nav_top}`}>
         <Image
-        src="/icons/logo-rec.png"
+        src="/icons/logo-geomatic-full.png"
         alt="logo"
         height={50}
         width={230}

@@ -31,15 +31,11 @@ function ServicesOptions() {
 
 
     useEffect(() => {
-        // Do something here...
-        console.log(searchParams.has("service", "Procesos de Mensura"))
         let margin = 50;
 
         const handleResize = () => {
             const windowWidth = window.innerWidth;
             if (windowWidth <= 1000) {
-              // Realizar la acción deseada para pantallas mayores o iguales a 768px
-              console.log('La pantalla es igual o mayor a 768px de ancho');
               margin=25;
             }
           };
@@ -59,8 +55,6 @@ function ServicesOptions() {
 
             handleResize();
             window.addEventListener('resize', handleResize);
-        
-            // Eliminar el listener al desmontar el componente
             return () => {
               window.removeEventListener('resize', handleResize);
             };

@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-contentl: center;
+  align-items: center;
+  width: 19rem;
+  height: 19rem;
+  color: var(--black-primary);
+  background: var(--white-primary);
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2),
+    -3px -3px 10px rgba(255, 255, 255, 0.8);
+  padding: 1rem  0.5rem 0.5rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  min-height:3rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  min-height:6rem;
+}
