@@ -17,8 +17,6 @@ function ServicesOptions() {
 
 
     const toggleOptions = (option: string) => {
-        console.log("toggleOptions " + option + " " + services)
-
         if (option === "Procesos de Mensura" && services === "Topografía y Construcción") {
             setServices("Procesos de Mensura")
         } else if (option === "Topografía y Construcción" && services === "Procesos de Mensura") {
@@ -62,9 +60,6 @@ function ServicesOptions() {
 
     }, [pathname, searchParams])
 
-    useEffect(() => {
-
-    }, [shouldScroll])
 
     return (
         <div className={styles.main} ref={catalogRef}>
