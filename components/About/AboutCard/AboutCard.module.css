@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width:15rem;
+    height:8rem;
+    border: 1px solid var(--gray-primary);
+    color: var(--black-primary);
+    padding:1rem;
+    position: relative;
+}
+
+.card h2{
+    color: var(--black-primary);
+}
+
+.card p{
+    font-size: 0.8rem;
+    font-weight:300;
+}
+
+.index{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    background: var(--red-primary);
+    color: var(--white-primary);
+    font-weight: 500;
+    width:2rem;
+    height: 2rem;
+    left:-1rem;
+    top: 1rem;
+    border-radius:50%;
+}

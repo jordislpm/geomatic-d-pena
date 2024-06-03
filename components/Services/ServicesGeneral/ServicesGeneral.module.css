@@ -8,11 +8,12 @@
     align-items: center;
 }
 
-.service__section p{
+.p__principal{
    color: var(--black-primary);
    text-align: center;
    margin-bottom: 2rem;
    font-size: 1.1rem;
+   animation: smoothAnimation 2s ease;
 }
 
 .service__section h3{
@@ -29,6 +30,19 @@
     margin-bottom: 1rem;
     text-align: center;
  }
+
+ @keyframes smoothAnimation {
+    0% {
+      opacity: 0;
+      /* transform: translateY(-40rem); */
+      /* font-size: 0rem; */
+    }
+    100% {
+      opacity: 1;
+      /* font-size: 1.1rem; */
+      /* transform: translateY(0);  */
+    }
+  }
 
  @media screen and (max-width: 768px) {
     .service__section{

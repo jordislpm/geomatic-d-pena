@@ -42,3 +42,13 @@ export interface ServiceCardProps{
     title: string;
     description: string;
 }
+
+export interface aboutCardProps{
+    title: string;
+    description: string;
+    index: number;
+}
+
+export interface ourApproach {
+    approach:aboutCardProps[];
+}
