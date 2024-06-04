@@ -7,7 +7,7 @@ function HomeHero() {
     <section className={styles.hero}>
         <div className={styles.hero__text}>
             <h2>Profesionalismo garantizado.</h2>
-            <h3>Las terrenas, Samana y todo el nordeste</h3>
+            <h3>Las terrenas, Samana, y todo el nordeste</h3>
         </div>
     </section>
   )

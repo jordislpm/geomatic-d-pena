@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from "./Footer.module.css"
 import Image from 'next/image'
-import { contacts_data } from '@/constants/contacts'
+import { contact_number, contacts_data, whatsapp_number } from '@/constants/contacts'
 import { routes } from '@/constants'
 import Link from 'next/link'
 import { servicesData } from '@/constants/services'
@@ -36,9 +36,17 @@ function Footer() {
                 height={30} />
               {contacts_data.email.info}
             </p>
-            <p className={styles.info__contact_number}>
-              + 1 ( 647 ) 667 9262
-            </p>
+            <a className={styles.info__contact_number}
+             href={whatsapp_number}
+             target='_blank'>
+              
+            <Image
+                        src="/icons/whatsapp-icon.png"
+                        alt='whatsapp'
+                        height={25}
+                        width={25} />
+                        {contact_number}
+            </a>
           </div>
         </div>
         <div className={styles.info__options}>

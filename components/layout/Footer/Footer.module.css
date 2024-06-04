@@ -32,6 +32,11 @@ margin-bottom:1rem;
 
 .info__contact_number{
     padding: 2rem 0rem 0rem 2rem;
+    text-decoration: none; 
+    color: inherit;
+    display:flex;
+    align-items: center;
+    gap:1rem;
 }
 
 .info__options{

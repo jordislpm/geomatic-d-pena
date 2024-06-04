@@ -12,12 +12,11 @@ function HomeAbout() {
                 <div />
                 <hr />
                 <p>
-                {company_name}, es una empresa profesional de agrimensura multidisciplinaria, fundada por socios que se combinaron para brindar experiencia específica de la industria a la empresa. Los agrimensores de Genesis brindan una variedad de servicios profesionales de agrimensura de propiedades para el sector público y privado con soluciones únicas y personalizadas para nuestros clientes.
+                {company_name}, es una empresa profesional de agrimensura multidisciplinaria, fundada por socios que se combinaron para brindar experiencia específica de la industria a la empresa. En nuestra empresa brindamos una variedad de servicios profesionales de agrimensura para el sector público y privado con soluciones únicas y personalizadas para nuestros clientes.
                     <br />
                     <br />
                     Nuestros clientes se benefician de nuestra experiencia, responsabilidad y acceso a una amplia gama de recursos tecnologicos que le ahorran tiempo y dinero.
                 </p>
-
             </div>
             <div className={styles.right}>
                 <div className={styles.right__content}>

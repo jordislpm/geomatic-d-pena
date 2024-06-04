@@ -1,4 +1,4 @@
-export const company_name="Geomatic D' peña"
+export const company_name="Geomatic D' Peña"
 
 
 export const routes = [

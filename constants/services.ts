@@ -5,7 +5,7 @@ export const servicesData = [
     title: "Procesos de Mensura",
     subTitle: "SERVICIOS ESPECIALIZADOS EN PROCESOS CATASTRALES Y DE TITULACIÓN",
     description: "Nuestros servicios integrales de mensura están diseñados a medida para clientes que requieren procesos legales de regularización de terrenos, adaptándonos a sus necesidades y particularidades específicas.",
-    link:"https://genesislandsurvey.com/",
+    link:"/services",
     img: "/red-suryeyor.png",
     services:[
         {title:"Procesos de Jurisdicción de Mensuras",
@@ -35,7 +35,7 @@ export const servicesData = [
     title: "Topografía y Construcción",
     subTitle: "LEVANTAMIENTOS Y PLANIFICACIÓN PARA LA CONSTRUCCIÓN",
     description: "Nuestro equipo experimentado se dedica a lograr la satisfacción del cliente, proporcionando soluciones topográficas para la construcción que superan las expectativas de propietarios, planificadores, arquitectos, abogados e ingenieros.",
-    link:"https://genesislandsurvey.com/",
+    link:"/services",
     img: "/street-surveyor.webp",
     services:[
         {title:"Servicios Topográficos y de Ingeniería",
