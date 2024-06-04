@@ -110,4 +110,9 @@ padding: 1rem 0rem;
         .images img{
       width:100%;
             }
+
+            .aside{
+              height:auto;
+              min-height: max-content;
+            }
   }

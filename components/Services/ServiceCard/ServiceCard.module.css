@@ -4,7 +4,7 @@
   justify-contentl: center;
   align-items: center;
   width: 18rem;
-  height: 18rem;
+  height: 20rem;
   color: var(--black-primary);
   background: var(--white-primary);
   text-align: center;
@@ -33,7 +33,7 @@
 
 .card p {
   font-size: 0.8rem;
-  min-height:6rem;
+  min-height:8rem;
   color: var(--black-primary);
 }
 
