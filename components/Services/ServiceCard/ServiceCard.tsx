@@ -3,6 +3,8 @@ import styles from "./ServiceCard.module.css"
 import { ServiceCardProps } from '@/types'
 import Image from 'next/image'
 import ButtonPrincipal from '@/components/share/ButtonPrincipal/ButtonPrincipal'
+import ButtonAnchor from '@/components/share/ButtonAnchor/ButtonAnchor'
+import { whatsapp_number } from '@/constants/contacts'
 
 function ServiceCard({title,logo,description}:ServiceCardProps) {
   return (
@@ -16,7 +18,7 @@ function ServiceCard({title,logo,description}:ServiceCardProps) {
         <p>
             {description}
         </p>
-        <ButtonPrincipal type='primary' title='Contratar'/>
+        <ButtonAnchor type='primary' title='Contratar' href={whatsapp_number}/>
     </div>
   )
 }

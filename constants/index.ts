@@ -14,10 +14,10 @@ export const routes = [
         name: "Servicios",
         route: "/services"
     },
-    {
-        name: "Galeria",
-        route: "/gallery"
-    },
+    // {
+    //     name: "Galeria",
+    //     route: "/gallery"
+    // },
     {
         name: "Contactanos",
         route: "/contact"

@@ -49,3 +49,9 @@
     transform: translateY(0); /* Termina en su posición original */
   }
 }
+
+@media screen and (max-width: 768px) {
+  .hero__text > h2{
+    font-size: 2rem;
+}
+}

@@ -17,6 +17,13 @@ export interface ButtonPrincipalProps{
     buttonAction?: ()=> void;
 }
 
+export interface ButtonAnchorProps{
+    title?: string;
+    type?: "primary" | "secundary";
+    buttonAction?: ()=> void;
+    href: string;
+}
+
 export interface GoogleMapsProps{
     height?: string,
     width?: string;
@@ -52,3 +59,9 @@ export interface aboutCardProps{
 export interface ourApproach {
     approach:aboutCardProps[];
 }
+
+export interface FormDataProps {
+    name: string;
+    email: string;
+    message: string;
+  }

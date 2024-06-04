@@ -33,7 +33,7 @@ function AboutGeneral() {
             </main>
             <aside className={styles.aside}>
                 <h3>¿POR QUÉ ELEGIRNOS?</h3>
-                <h2>NUESTRO ENFOQUE</h2>
+                <h2 className={styles.aside__subTitle}>NUESTRO ENFOQUE</h2>
                 <div className={styles.approach__list}>
                     {aboutApproach.map((approach, index) => (
                         <AboutCard

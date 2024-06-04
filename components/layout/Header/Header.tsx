@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import styles from "./Header.module.css"
 import Image from 'next/image'
 import Nav from '../Nav/Nav'
+import { contact_number, whatsapp_number } from '@/constants/contacts'
 
 function Header() {
 
@@ -38,14 +39,14 @@ function Header() {
     <header className={styles.header}>
         <div className={styles.top__bar}>
             <a className={styles.top__bar_button}
-            href='https://wa.me/11647667926?text=Hola,%20estoy%20interesado%20en%20tus%20servicios%20como%20agrimensor.'
+            href={whatsapp_number}
             target='_blank'>
             <Image
             src="/icons/whatsapp-icon.png"
             alt='whatsapp'
             height={25}
             width={25}/>
-            <span>+ 1 ( 647 ) 667 9262</span>
+            <span className={styles.number}>{contact_number}</span>
             </a>
         </div>
         <div className={`${styles.header__nav} ${scroll ? styles.header__nav_scroll: styles.header__nav_top}`}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./AboutHero.module.css"
+import { company_name } from '@/constants'
 
 
 function AboutHero() {
@@ -7,7 +8,7 @@ function AboutHero() {
     <div className={styles.hero}>
         <div className={styles.hero__text}>
             <h3>Sobre</h3>
-            <h2>Geomatic D&apos; Peña</h2>
+            <h2>{company_name}</h2>
         </div>
     </div>
   )
