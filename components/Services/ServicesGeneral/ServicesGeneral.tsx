@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import styles from "./ServicesGeneral.module.css"
 import ServicesOptions from '../ServicesOptions/ServicesOptions'
 
@@ -10,7 +10,9 @@ function ServicesGeneral() {
             </p>
             <h3>NUESTROS SERVICIOS</h3>
             <h4>Nosotros proveemos servicios de procesos de mensura y topograficos</h4>
-            <ServicesOptions/>
+            <Suspense fallback={<div>Loading...</div>}>
+              <ServicesOptions/>
+            </Suspense>
     </section>
   )
 }
