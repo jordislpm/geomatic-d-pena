@@ -8,19 +8,19 @@ function FloatingButton() {
 
     useEffect(() => {
         const handleScroll = () => {
-          const offset = window.pageYOffset;
-          setIsVisible(offset > window.innerHeight);
+          const offset = global.pageYOffset;
+          setIsVisible(offset > global.innerHeight);
         };
     
-        window.addEventListener('scroll', handleScroll);
+        global.addEventListener('scroll', handleScroll);
     
         return () => {
-          window.removeEventListener('scroll', handleScroll);
+            global.removeEventListener('scroll', handleScroll);
         };
       }, []);
 
       const scrollToTop = () => {
-        window.scrollTo({
+        global.scrollTo({
           top: 0,
           behavior: 'smooth',
         });

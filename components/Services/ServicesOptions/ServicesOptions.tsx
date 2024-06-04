@@ -32,7 +32,7 @@ function ServicesOptions() {
         let margin = 50;
 
         const handleResize = () => {
-            const windowWidth = window.innerWidth;
+            const windowWidth = global.innerWidth;
             if (windowWidth < 768) {
                 margin=70;
             }
@@ -44,13 +44,13 @@ function ServicesOptions() {
             setServices("Procesos de Mensura");
             if (catalogRef.current) {
                 const topOffset = catalogRef.current.offsetTop - margin;
-                window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                global.scrollTo({ top: topOffset, behavior: 'smooth' });
             }
         } else if (searchParams.has("service", "Topografía y Construcción")) {
             setServices("Topografía y Construcción");
             if (catalogRef.current) {
                 const topOffset = catalogRef.current.offsetTop - margin;
-                window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                global.scrollTo({ top: topOffset, behavior: 'smooth' });
             }
 
            

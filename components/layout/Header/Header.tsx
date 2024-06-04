@@ -11,7 +11,7 @@ function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const isTop = window.scrollY === 0;
+            const isTop = global.scrollY === 0;
             if (!isTop && !scroll) {
                 setScroll(true);
             } else if (isTop && scroll) {
@@ -20,17 +20,17 @@ function Header() {
         };
 
         const checkInitialScroll = () => {
-            const isTop = window.scrollY === 0;
+            const isTop = global.scrollY === 0;
             if (!isTop) {
                 setScroll(true);
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        global.addEventListener('scroll', handleScroll);
         checkInitialScroll();
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            global.removeEventListener('scroll', handleScroll);
         };
     }, [scroll]);
 

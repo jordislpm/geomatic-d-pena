@@ -14,7 +14,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 function HomeServices() {
 
     const router = useRouter()
-    const searhParams = new URLSearchParams(window.location.search);
+    const searhParams = new URLSearchParams(global.location.search);
 
     const goToService = (route: string)=>{
         searhParams.set("service", route)

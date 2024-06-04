@@ -26,7 +26,7 @@ function ContactForm() {
         const name_link = name.split(" ").join("%20");
         const message_link = message.split(" ").join("%20");
         const dynamicLink = `https://wa.me/11647667926?text=Nombre:%20${name_link},%20Mensaje:%20"${message_link}".%20Mi%20email%20es:%20${email}.%20estoy%20interesado%20en%20tus%20servicios%20como%20agrimensor."`
-        window.open(dynamicLink, '_blank', 'noopener,noreferrer');
+        global.open(dynamicLink, '_blank', 'noopener,noreferrer');
         
       };
   return (
