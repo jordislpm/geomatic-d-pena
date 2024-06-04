@@ -4,6 +4,7 @@ import "./fonts.css"
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
+import FloatingButton from "@/components/share/FloatingButton/FloatingButton";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -50,6 +51,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FloatingButton/>
       </body>
     </html>
   );
