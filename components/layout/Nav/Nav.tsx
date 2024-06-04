@@ -35,7 +35,7 @@ function Nav({ scroll }: NavProps) {
                 alt="menu-burger"
                 width={10}
                 height={10}
-                objectFit="contain"
+                // objectFit="contain"
                 onClick={() => setIsOpen(!isOpen)} />
             <ul className={`${styles.menu} ${isOpen ? styles.menu_responsive : ""}`}>
 

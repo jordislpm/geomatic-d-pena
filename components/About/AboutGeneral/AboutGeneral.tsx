@@ -20,14 +20,14 @@ function AboutGeneral() {
                 <div className={styles.images}>
                     <Image
                         src="/surveyor-topcon.jpg"
-                        alt=""
-                        height={300}
+                        alt="surveyor-topcon"
+                        height={280}
                         width={280} />
 
                     <Image
                         src="/contour.png"
-                        alt=""
-                        height={300}
+                        alt="contour"
+                        height={280}
                         width={280} />
                 </div>
             </main>

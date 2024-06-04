@@ -5,7 +5,7 @@ import { HomeServicesProps } from '@/types'
 import Image from 'next/image'
 import ButtonPrincipal from '@/components/share/ButtonPrincipal/ButtonPrincipal'
 import { servicesData } from '@/constants/services'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 
 
