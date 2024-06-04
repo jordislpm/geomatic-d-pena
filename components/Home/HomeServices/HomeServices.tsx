@@ -1,7 +1,6 @@
 "use client"
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from "./HomeServices.module.css"
-import { HomeServicesProps } from '@/types'
 import Image from 'next/image'
 import ButtonPrincipal from '@/components/share/ButtonPrincipal/ButtonPrincipal'
 import { servicesData } from '@/constants/services'
@@ -13,13 +12,22 @@ import { useRouter } from 'next/navigation'
 
 function HomeServices() {
 
-    const router = useRouter()
-    const searhParams = new URLSearchParams(global.location.search);
-
-    const goToService = (route: string)=>{
-        searhParams.set("service", route)
-        router.push(`/services?${searhParams.toString()}`)
-    }
+    const router = useRouter();
+    const [searchParams, setSearchParams] = useState<URLSearchParams | null>(null);
+  
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search);
+        setSearchParams(params);
+      }
+    }, []);
+  
+    const goToService = (route: string) => {
+      if (searchParams) {
+        searchParams.set("service", route);
+        router.push(`/services?${searchParams.toString()}`);
+      }
+    };
 
     return (
         <section className={styles.body}>
