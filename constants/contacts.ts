@@ -12,4 +12,4 @@ export const contacts_data = {
 
 export const contact_number = "+ 1 ( 647 ) 667 9262";
 
-export const whatsapp_number = "https://wa.me/1647667926?text=Hola,%20estoy%20interesado%20en%20tus%20servicios%20como%20agrimensor."
+export const whatsapp_number = "https://wa.link/1iyknp";
