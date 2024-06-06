@@ -24,8 +24,10 @@
     font-size: 0.8rem;
     position: relative;
     font-weight: bold;
-    color: var(--black-primary);
+    text-decoration: none; 
+  color: inherit;
     transition: padding 0.2s ease;
+    white-space: nowrap;
   }
   
   

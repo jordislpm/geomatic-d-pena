@@ -40,7 +40,7 @@ export const servicesData = [
         subTitle: "LEVANTAMIENTOS Y PLANIFICACIÓN PARA LA CONSTRUCCIÓN",
         description: "Nuestro equipo experimentado se dedica a lograr la satisfacción del cliente, proporcionando soluciones topográficas para la construcción que superan las expectativas de propietarios, planificadores, arquitectos, abogados e ingenieros.",
         link: "/services",
-        img: "/street-surveyor.webp",
+        img: "/nearterm-land-surveyor.jpg",
         services: [
             {
                 title: "Servicios Topográficos y de Ingeniería",

@@ -52,12 +52,14 @@ color: inherit;
 .header__nav_top{
     margin-top: 2rem;
     background-color: rgba(244, 244, 244, 0.5);
+    color: var(--black-dark);
 }
 
 .header__nav_scroll{
     margin-top: 0rem;
     background-color: var(--white-primary);
     height: 3rem;
+    color: var(--black-primary);
 }
 
 .header__nav_scroll img{

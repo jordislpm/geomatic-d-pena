@@ -3,7 +3,8 @@
   text-decoration: none; 
   color: inherit;
   flex-direction: column;
-  width: max-content;
+  min-width: max-content;
+  width: 10rem;
   padding: 0.2rem 3rem;
   border-radius: 2rem 2rem 2rem 2rem;
   font-size: 0.9rem;

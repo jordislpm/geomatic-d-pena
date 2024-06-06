@@ -22,6 +22,8 @@
 
 .img {
   min-width: 50%;
+ min-height:max-content;
+ height:100%;
 }
 
 .service {

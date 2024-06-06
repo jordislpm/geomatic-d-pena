@@ -42,7 +42,7 @@ function HomeServices() {
                         alt={service.title}
                         className={styles.img}
                         width={500}
-                        height={350}
+                        height={500}
                         objectPosition="center" 
                     />
                     <div className={styles.service__content}>
