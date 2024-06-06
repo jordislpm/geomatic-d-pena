@@ -85,7 +85,7 @@ function Footer() {
 
         </div>
       </div>
-      © Copyright 2024  ·  Geomatic D&apos; peña. Todos Los Derechos Reservados
+      © Copyright 2024  ·  {company_name}. Todos Los Derechos Reservados
     </footer>
   )
 }
