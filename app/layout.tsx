@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description: 'Somos una destacada oficina de agrimensura comprometida con la excelencia en servicios topográficos y cartográficos. Nuestro equipo de expertos agrimensores ofrece soluciones precisas y confiables para proyectos de ingeniería, construcción, urbanismo y más. Con tecnología de vanguardia y un enfoque centrado en el cliente, garantizamos resultados sobresalientes y satisfacción en cada proyecto. Confía en nosotros para tus necesidades de levantamiento topográfico, delineación de terrenos, parcelación y todo lo relacionado con la georreferenciación. ¡Contáctanos hoy mismo para impulsar el éxito de tu proyecto con precisión y profesionalismo!',
   applicationName: 'Geomatic D\' Peña',
-  keywords: ['agrimensura', 'topografía', 'Las Terrenas', 'Samaná', 'República Dominicana', 'medición de terrenos', 'desarrollo inmobiliario', 'servicios profesionales', 'geodesia', 'cartografía', 'levantamientos topográficos', 'geomática', 'planificación urbana', 'georreferenciación', 'deslinde', 'saneamiento', 'curva de nivel', 'agrimensor', 'topografo'],
+  keywords: ['agrimensura', 'topografía', 'Las Terrenas', 'Samaná', 'República Dominicana', 'medición de terrenos', 'desarrollo inmobiliario', 'servicios profesionales', 'geodesia', 'cartografía', 'levantamientos topográficos', 'geomática', 'planificación urbana', 'georreferenciación', 'deslinde','saneamiento', 'curva de nivel', 'agrimensor', 'topografo'],
   authors: [{ name: 'Geomatic D\' Peña', url: 'https://geomaticdpena.com' }],
   creator: 'jordisdev.com',
   publisher: 'jordisdev.com',
@@ -46,31 +46,32 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <Script 
-        id="gtm" 
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-MTH2ZSH4');`
-        }}>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <Script 
+      id="gtm" 
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTH2ZSH4')`
+      }}>
+      </Script>
 
-        </Script>
-
-
-
-
-
-
+      {/* <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTH2ZSH4');</script>
+<!-- End Google Tag Manager --> */}
       </head>
       <body className={``}>
         <Header />
         {children}
         <Footer />
-        <FloatingButton />
+        <FloatingButton/>
       </body>
     </html>
   );
