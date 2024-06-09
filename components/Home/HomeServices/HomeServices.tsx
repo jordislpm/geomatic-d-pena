@@ -36,7 +36,7 @@ function HomeServices() {
             </div>
             {servicesData.map((service, index) => (
                 <div key={service.title}
-                    className={`${index % 2 === 0 ? styles.service : styles.serviceReverse}`}>
+                    className={`${styles.service} ${index % 2 !== 0 ? styles.serviceReverse : ""}`}>
                     <Image
                         src={service.img}
                         alt={service.title}
