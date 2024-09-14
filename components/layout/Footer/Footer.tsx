@@ -9,6 +9,7 @@ import { servicesData } from '@/constants/services'
 import { usePathname } from 'next/navigation'
 import GoogleMaps from '@/components/share/GoogleMaps/GoogleMaps'
 import { company_name } from '@/constants'
+import ContactWhatsapp from '@/components/share/ContactWhatsapp/ContactWhatsapp'
 
 
 
@@ -36,7 +37,7 @@ function Footer() {
                 height={30} />
               {contacts_data.email.info}
             </p>
-            <a className={styles.info__contact_number}
+            {/* <a className={styles.info__contact_number}
              href={whatsapp_number}
              target='_blank'>
               
@@ -45,8 +46,9 @@ function Footer() {
                         alt='whatsapp'
                         height={25}
                         width={25} />
-                        {contact_number}
-            </a>
+                       ¡Contáctanos por WhatsApp!
+            </a> */}
+            <ContactWhatsapp/>
           </div>
         </div>
         <div className={styles.info__options}>

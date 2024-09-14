@@ -1,0 +1,32 @@
+.top__bar_button{
+    display: flex;
+    color: white;
+    justify-content: end;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit;
+    width: max-content;
+    padding:0.2rem;
+    border-radius: 12px;
+}
+
+.top__bar_button:hover{
+    background-color: white; /* Color del fondo del elemento (gris oscuro para contraste) */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.8),  /* Sombra oscura principal */
+      0 -2px 8px rgba(255, 255, 255, 0.2); /* Sombra clara superior (brillo) */
+     
+      .number{
+        color: black;
+      }
+}
+
+.number{
+    text-decoration: none; 
+    color: inherit;
+    display:flex;
+    align-items: center;
+    gap:1rem;
+    color: var(--white-primary); 
+}

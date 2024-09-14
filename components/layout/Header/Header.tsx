@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Nav from '../Nav/Nav'
 import { contact_number, whatsapp_number } from '@/constants/contacts'
 import Link from 'next/link'
+import ContactWhatsapp from '@/components/share/ContactWhatsapp/ContactWhatsapp'
 
 function Header() {
 
@@ -39,7 +40,7 @@ function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.top__bar}>
-                <a className={styles.top__bar_button}
+                {/* <a className={styles.top__bar_button}
                     href={whatsapp_number}
                     target='_blank'>
                     <Image
@@ -47,8 +48,9 @@ function Header() {
                         alt='whatsapp'
                         height={25}
                         width={25} />
-                    <span className={styles.number}>{contact_number}</span>
-                </a>
+                    <span className={styles.number}>¡Contáctanos por WhatsApp!</span>
+                </a> */}
+                <ContactWhatsapp/>
             </div>
             <div className={`${styles.header__nav} ${scroll ? styles.header__nav_scroll : styles.header__nav_top}`}>
                 <Link href="/">
