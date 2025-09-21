@@ -1,0 +1,115 @@
+.section {
+  display: flex;
+  width: 100%;
+  min-height: 35rem;
+  background-color: var(--black-primary);
+  padding: 2rem 0;
+  flex-wrap: nowrap;
+}
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 40%;
+  color: var(--white-primary);
+  gap: 2rem;
+  padding: 1rem 1rem 1rem 2rem;
+  justify-content: center;
+}
+
+.textArea h2 {
+  color: var(--red-primary);
+}
+
+.textArea h3 {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.button {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--white-primary);
+  transition: all 0.5s ease;
+}
+
+.defaultIcon,
+.hoverIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.defaultIcon {
+  opacity: 1;
+}
+
+.hoverIcon {
+  opacity: 0;
+}
+
+.button:hover .defaultIcon {
+  opacity: 0;
+}
+
+.button:hover .hoverIcon {
+  opacity: 1;
+}
+
+.button:hover {
+  background: var(--red-primary);
+}
+
+.button_left {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+
+.reviewsArea {
+  flex: 0 0 60%;
+  display: flex;
+  min-height: 30rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Swiper container styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Swiper slide styles */
+.swiperSlide {
+  width: auto !important;
+}
+
+/* Mobile specific styles for proper centering */
+@media screen and (max-width: 768px) {
+  .swiperSlide {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+  .textArea,
+  .reviewsArea {
+    flex: 1 1 100%;
+  }
+}

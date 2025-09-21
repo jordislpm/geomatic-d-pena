@@ -1,0 +1,41 @@
+.card{
+display:flex;
+flex-direction: column;
+width: 28rem;
+height:28rem;
+background: var(--white-primary);
+border-radius: 10px;
+padding:2rem;
+justify-content:space-between;
+}
+
+.stars{
+    font-size: 1.5rem;
+}
+
+.stars p{
+  font-weight:bold;
+}
+
+.user{
+    display: flex;
+    align-items:center;
+gap:1rem;
+}
+
+.photo{
+    border-radius: 50%;
+    height: 5rem;
+    width:auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90vw;
+    height: 90vw;
+    /* Remove flex properties that conflict with Swiper */
+    flex: none;
+    min-width: auto;
+    max-width: none;
+  }
+}

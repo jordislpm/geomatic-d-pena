@@ -3,6 +3,7 @@ import HomeAbout from '@/components/Home/HomeAbout/HomeAbout'
 import HomeServiceQuestions from '@/components/Home/HomeServiceQuestions/HomeServiceQuestions'
 import HomeServices from '@/components/Home/HomeServices/HomeServices'
 import React from 'react'
+import HomeReviews from '../../components/Home/HomeReviews/HomeReviews'
 
 function HomeView() {
   return (
@@ -10,6 +11,7 @@ function HomeView() {
     <Hero/>
     <HomeAbout/>
     <HomeServices/>
+    <HomeReviews/>
     <HomeServiceQuestions/>
     </>
   )
