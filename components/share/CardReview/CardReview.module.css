@@ -31,10 +31,8 @@ gap:1rem;
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 90vw;
-    height: 90vw;
-    /* Remove flex properties that conflict with Swiper */
-    flex: none;
+    width: 90vw; /* a bit smaller than screen for padding */
+    height: auto; /* let it grow naturally */
     min-width: auto;
     max-width: none;
   }

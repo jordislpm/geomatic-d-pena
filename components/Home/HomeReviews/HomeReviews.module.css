@@ -98,8 +98,9 @@
 /* Mobile specific styles for proper centering */
 @media screen and (max-width: 768px) {
   .swiperSlide {
-    display: flex !important;
-    justify-content: center !important;
+    width: 100% !important; /* full width of Swiper */
+    display: flex;
+    justify-content: center;
   }
 }
 
