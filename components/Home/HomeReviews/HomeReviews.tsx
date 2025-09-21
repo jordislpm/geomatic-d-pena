@@ -43,13 +43,6 @@ function HomeReviews() {
               width={100}
               height={100}
             />
-            <Image
-              src={arrowRightWhite}
-              className={styles.hoverIcon}
-              alt="arrow"
-              width={100}
-              height={100}
-            />
           </div>
           <div onClick={handleNext} className={styles.button}>
             <Image
@@ -59,17 +52,9 @@ function HomeReviews() {
               width={100}
               height={100}
             />
-            <Image
-              src={arrowRightWhite}
-              className={styles.hoverIcon}
-              alt="arrow"
-              width={100}
-              height={100}
-            />
           </div>
         </div>
       </div>
-
       <div className={styles.reviewsArea}>
         <Swiper
           modules={[Navigation]}

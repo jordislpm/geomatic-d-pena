@@ -55,18 +55,6 @@
   opacity: 1;
 }
 
-.hoverIcon {
-  opacity: 0;
-}
-
-.button:hover .defaultIcon {
-  opacity: 0;
-}
-
-.button:hover .hoverIcon {
-  opacity: 1;
-}
-
 .button:hover {
   background: var(--red-primary);
 }
