@@ -1,20 +1,34 @@
-import React, { Suspense } from 'react'
-import styles from "./ServicesGeneral.module.css"
-import ServicesOptions from '../ServicesOptions/ServicesOptions'
+import React, { Suspense } from 'react';
+import styles from "./ServicesGeneral.module.css";
+import ServicesOptions from '../ServicesOptions/ServicesOptions';
 
 function ServicesGeneral() {
   return (
-    <section className={styles.service__section}>
-      <p className={styles.p__principal}>
-        Nuestra empresa de agrimensura se enfoca en ofrecer servicios profesionales tanto en procesos de mensura como en topografía, atendiendo tanto al sector público como al privado. Nos dedicamos a lograr la satisfacción del cliente y a proporcionar soluciones de mensura y topografía que superen las expectativas de ingenieros, propietarios de terrenos, planificadores, arquitectos, abogados y consultores.
-      </p>
-      <h3>NUESTROS SERVICIOS</h3>
-      <h4>Nosotros proveemos servicios de procesos de mensura y topograficos</h4>
-      <Suspense fallback={<div>Loading...</div>}>
-        <ServicesOptions />
-      </Suspense>
+    <section id="servicios-contenido" className={styles.section}>
+      <div className={styles.container}>
+        {/* Section Header */}
+        <div className={styles.header}>
+          <div className={styles.badge}>
+            <span className={styles.badgeDot} />
+            <span>Catálogo Especializado</span>
+          </div>
+
+          <h2 className={styles.title}>
+            Soluciones Técnicas & Legales de <span className={styles.titleAccent}>Agrimensura</span>
+          </h2>
+
+          <p className={styles.subtitle}>
+            Selecciona la categoría de tu interés para conocer los procesos y solicitar atención inmediata con nuestro equipo en Las Terrenas y Samaná.
+          </p>
+        </div>
+
+        {/* Options Switcher & Cards Catalog */}
+        <Suspense fallback={<div style={{ textAlign: 'center', padding: '2rem' }}>Cargando catálogo...</div>}>
+          <ServicesOptions />
+        </Suspense>
+      </div>
     </section>
-  )
+  );
 }
 
-export default ServicesGeneral
+export default ServicesGeneral;

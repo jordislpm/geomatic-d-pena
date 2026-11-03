@@ -1,53 +1,261 @@
+/* ==========================================================================
+   Modern ContactForm Styles (Compact Desktop & Fullscreen Mobile)
+   ========================================================================== */
 .contactForm {
-    width: 50%;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: var(--black-primary);
-  }
-  
-  .formGroup {
-    margin-bottom: 1.5rem;
-  }
-  
-  .formGroup label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  
-  .formGroup input,
-  .formGroup textarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 580px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.75rem;
+  padding: 2.25rem 2.25rem;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Form Header
+   -------------------------------------------------------------------------- */
+.formHeader {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background-color: rgba(242, 7, 7, 0.08);
+  border: 1px solid rgba(242, 7, 7, 0.22);
+  color: var(--red-primary, #F20707);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--red-primary, #F20707);
+  box-shadow: 0 0 8px rgba(242, 7, 7, 0.6);
+}
+
+.title {
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0 0 0.35rem 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Form Groups & Inputs
+   -------------------------------------------------------------------------- */
+.formGroup {
+  margin-bottom: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+
+.requiredMark {
+  color: var(--red-primary, #F20707);
+  font-weight: 700;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.fieldIcon {
+  position: absolute;
+  left: 1rem;
+  width: 17px;
+  height: 17px;
+  stroke: #9ca3af;
+  pointer-events: none;
+  transition: stroke 0.2s ease;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+  font-size: 0.925rem;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus {
+  border-color: var(--red-primary, #F20707);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3.5px rgba(242, 7, 7, 0.12);
+}
+
+.inputWrap:focus-within .fieldIcon {
+  stroke: var(--red-primary, #F20707);
+}
+
+.textareaWrap {
+  position: relative;
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+  font-size: 0.925rem;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 85px;
+  font-family: inherit;
+}
+
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.textarea:focus {
+  border-color: var(--red-primary, #F20707);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3.5px rgba(242, 7, 7, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   Submit Button
+   -------------------------------------------------------------------------- */
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(242, 7, 7, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0.4rem;
+  box-sizing: border-box;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #d00505;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(242, 7, 7, 0.45);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btnWhatsappIcon {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.btnArrowIcon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.submitButton:hover:not(:disabled) .btnArrowIcon {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Trust Footer Note
+   -------------------------------------------------------------------------- */
+.trustFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.775rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.lockIcon {
+  stroke: #9ca3af;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Adjustments: Form Occupies Screen Height
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 640px) {
+  .contactForm {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .formGroup textarea {
-    resize: vertical;
-  }
-  
-  .submitButton {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--red-primary);
-    color: var(--white-primary);
-    border: 1px solid var(--red-primary);
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submitButton:hover {
-    background-color: var(--white-primary);
-    color:var(--red-primary);
+    min-height: calc(100vh - 3rem);
+    min-height: calc(100dvh - 3rem);
+    padding: 2.25rem 1.35rem;
+    border-radius: 1.5rem;
+    justify-content: center;
   }
 
-  @media screen and (max-width: 768px) {
-    .contactForm {
-        width: 100%;
-      
-      }
+  .title {
+    font-size: 1.35rem;
   }
+
+  .formGroup {
+    margin-bottom: 1.15rem;
+  }
+
+  .submitButton {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.925rem;
+  }
+}

@@ -1,56 +1,36 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./Header.module.css"
 import Image from 'next/image'
 import Nav from '../Nav/Nav'
-import { contact_number, whatsapp_number } from '@/constants/contacts'
 import Link from 'next/link'
 import ContactWhatsapp from '@/components/share/ContactWhatsapp/ContactWhatsapp'
 
 function Header() {
-
     const [scroll, setScroll] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            const isTop = global.scrollY === 0;
-            if (!isTop && !scroll) {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 15) {
                 setScroll(true);
-            } else if (isTop && scroll) {
+            } else {
                 setScroll(false);
             }
         };
 
-        const checkInitialScroll = () => {
-            const isTop = global.scrollY === 0;
-            if (!isTop) {
-                setScroll(true);
-            }
-        };
-
-        global.addEventListener('scroll', handleScroll);
-        checkInitialScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
 
         return () => {
-            global.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, [scroll]);
-
+    }, []);
 
     return (
-        <header className={styles.header}>
-            <div className={styles.top__bar}>
-                {/* <a className={styles.top__bar_button}
-                    href={whatsapp_number}
-                    target='_blank'>
-                    <Image
-                        src="/icons/whatsapp-icon.png"
-                        alt='whatsapp'
-                        height={25}
-                        width={25} />
-                    <span className={styles.number}>¡Contáctanos por WhatsApp!</span>
-                </a> */}
-                <ContactWhatsapp/>
+        <header className={`${styles.header} ${scroll ? styles.header_scrolled : ''}`}>
+            <div className={`${styles.top__bar} ${scroll ? styles.top__bar_hidden : ''}`}>
+                <ContactWhatsapp />
             </div>
             <div className={`${styles.header__nav} ${scroll ? styles.header__nav_scroll : styles.header__nav_top}`}>
                 <Link href="/">
@@ -59,13 +39,11 @@ function Header() {
                         alt="logo"
                         height={50}
                         width={230}
+                        priority
                     />
                 </Link>
-                <Nav
-                    scroll={scroll}
-                />
+                <Nav scroll={scroll} />
             </div>
-
         </header>
     )
 }

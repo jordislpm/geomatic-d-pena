@@ -1,74 +1,446 @@
-.hero{
-    display: flex;
-    min-width:100%;
-    min-height: 100vh;
-    background-image: url('/hero.jpg');
-    background-size: cover; 
-    background-position: center;
-    z-index:10;
-    position:relative;
-    overflow: hidden;
+/* ==========================================================================
+   1. Fullscreen Hero Section (100% of Viewport)
+   ========================================================================== */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 560px;
+  width: 100%;
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: 10;
+  /* Clears the large header (7.2rem) so content is never covered */
+  padding-top: 7.2rem;
+  /* Leaves room for the scroll indicator */
+  padding-bottom: 4rem;
+  box-sizing: border-box;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1; 
+/* Gradient overlay for contrast and depth */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(14, 14, 14, 0.88) 0%,
+    rgba(21, 20, 20, 0.74) 50%,
+    rgba(17, 17, 17, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+/* Red accent ambient glow */
+.glowBlob {
+  position: absolute;
+  top: 18%;
+  right: 8%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, rgba(242, 7, 7, 0.16) 0%, transparent 65%);
+  filter: blur(55px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero Content Container */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto auto;
+  padding: 0 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Modern Pill Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f3f4f6;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.badgePulse {
+  position: relative;
+  display: flex;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.pulsePing {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+  opacity: 0.75;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.pulseDot {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
   }
-
-.hero__text{
-    display:flex;
-    flex-direction: column;
-    width:max-content;
-    height: max-content;
-    color: var(--white-primary);
-    position: absolute;
-    top:10rem;
-    left: 4rem;
-    z-index: 10;
-    animation: moveAndFadeIn 2s forwards;
 }
 
-.hero__text > h2{
-    font-size: 3rem;
-  
+/* Title & Typography */
+.title {
+  font-size: clamp(2.35rem, 4.8vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  max-width: 52rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes moveAndFadeIn {
+.titleAccent {
+  color: var(--red-primary, #F20707);
+  position: relative;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.6;
+  color: #d1d5db;
+  font-weight: 400;
+  max-width: 44rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(242, 7, 7, 0.38);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primaryBtn:hover {
+  background-color: #d00505;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(242, 7, 7, 0.48);
+}
+
+.btnArrow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primaryBtn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: 9999px;
+  background-color: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #25d366;
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.whatsappBtn:hover {
+  background-color: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+.whatsappIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* Scroll indicator at the bottom of the 100vh hero */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scrollText {
+  font-size: 0.725rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.scrollMouse {
+  width: 20px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollWheel {
+  width: 3px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+  animation: mouseScroll 1.6s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes mouseScroll {
   0% {
     opacity: 0;
-    transform: translatey(+40rem); /* Inicia fuera de la pantalla a la izquierda */
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: translateY(10px);
   }
   100% {
-    opacity: 1;
-    transform: translatey(0); /* Termina en su posición original */
+    opacity: 0;
+    transform: translateY(10px);
   }
 }
 
-
-@media screen and (max-width: 768px) {
-  .hero{
-    min-height: 50vh;
-    padding:2rem;
-
+/* ==========================================================================
+   2. Feature / Trust Banner (Immediately below 100vh Hero, reveals on scroll)
+   ========================================================================== */
+.featuresSection {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 3rem 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
 }
 
-.hero__text{
-  width:auto;
-  height: max-content;
-  top:10rem;
-  left: 2rem;
-
+.featuresContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
 }
 
-.hero__text > h2{
-  font-size: 2rem;
-
+.metricsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
 }
+
+.metricCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #f9fafb;
+  border: 1px solid #eaedf0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.metricCard:hover {
+  background-color: #ffffff;
+  border-color: rgba(242, 7, 7, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
+}
+
+.metricIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 0.85rem;
+  background-color: rgba(242, 7, 7, 0.08);
+  color: var(--red-primary, #F20707);
+  flex-shrink: 0;
+  border: 1px solid rgba(242, 7, 7, 0.2);
+}
+
+.metricInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: 0.01em;
+}
+
+.metricDesc {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+  .container,
+  .featuresContainer {
+    padding: 0 2rem;
+  }
+
+  .metricsRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .container,
+  .featuresContainer {
+    padding: 0 1.25rem;
+  }
+
+  .badge {
+    font-size: 0.725rem;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.975rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn,
+  .whatsappBtn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+
+  .scrollIndicator {
+    bottom: 1.25rem;
+  }
+
+  .featuresSection {
+    padding: 2rem 0;
+  }
+
+  .metricCard {
+    padding: 1rem 1.15rem;
+  }
+}

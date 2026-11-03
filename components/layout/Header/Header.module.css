@@ -1,90 +1,136 @@
-.header{
+.header {
     display: flex;
     flex-direction: column;
-    min-width: 100%;
-    height: auto;
-    z-index:100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    pointer-events: none;
 }
 
-.top__bar{
-display: flex;
-width: 100%;
-height: 2rem;
-background: black;
-color: white;
-justify-content: end;
-align-items: center;
-padding:0.5rem;
-text-decoration: none; 
-color: inherit;
+.top__bar {
+    pointer-events: auto;
+    display: flex;
+    width: 100%;
+    height: 2.2rem;
+    background: #111111;
+    color: #ffffff;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 3.5rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease,
+                border-color 0.35s ease,
+                padding 0.35s ease;
 }
 
-.top__bar_button{
+.top__bar_hidden {
+    height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom-color: transparent;
+}
+
+.top__bar_button {
     display: flex;
     color: white;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-    text-decoration: none; 
+    text-decoration: none;
     color: inherit;
 }
 
-.header__nav{
+.header__nav {
+    pointer-events: auto;
     display: flex;
-    position: fixed;
     width: 100%;
     height: 5rem;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4rem 0 4rem;
-    background-color: rgba(244, 244, 244, 0.5);
-    margin-top: 2rem;
-    transition: background-color 0.2s ease, margin 0.2s ease;
-    z-index:100;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    padding: 0 3.5rem;
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.header__nav img{
-    height: 4rem;
+.header__nav img {
+    height: 3.5rem;
     width: auto;
-    transition: height 0.2s ease, width 0.2s ease
+    object-fit: contain;
+    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s ease;
 }
 
-.header__nav_top{
-    margin-top: 2rem;
-    background-color: rgba(244, 244, 244, 0.5);
+.header__nav img:hover {
+    transform: scale(1.02);
+}
+
+.header__nav_top {
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     color: var(--black-dark);
 }
 
-.header__nav_scroll{
-    margin-top: 0rem;
-    background-color: var(--white-primary);
-    height: 3rem;
+.header__nav_scroll {
+    height: 3.8rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     color: var(--black-primary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 24px -2px rgba(0, 0, 0, 0.08);
 }
 
-.header__nav_scroll img{
-    height: 2.6rem;
+.header__nav_scroll img {
+    height: 2.7rem;
     width: auto;
 }
 
-.number{
-    color: var(--white-primary); 
+.number {
+    color: var(--white-primary);
 }
 
+@media screen and (max-width: 900px) {
+    .header__nav {
+        padding: 0 2rem;
+    }
 
- @media screen and (max-width: 768px) {
+    .top__bar {
+        padding: 0 2rem;
+    }
+}
 
-    .top__bar{
+@media screen and (max-width: 768px) {
+    .top__bar {
         display: none;
-        }
+    }
 
-        .header__nav img{
-            height: 3rem;
-            width: 8rem;
-        }
+    .header__nav {
+        padding: 0 1.25rem;
+        height: 4.2rem;
+        background-color: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
 
-        .header__nav{
-            margin-top: 0;
-            padding: 2rem 1rem;
-        }
-  }
+    .header__nav img {
+        height: 2.5rem;
+        width: auto;
+    }
+
+    .header__nav_scroll {
+        height: 3.8rem;
+    }
+}

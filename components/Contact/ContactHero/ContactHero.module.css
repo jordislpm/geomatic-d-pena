@@ -1,120 +1,288 @@
-.hero{
-    display: flex;
-    min-width:100%;
-    min-height: 70vh;
-    background-image: url('/hero.jpg');
-    background-size: cover; 
-    background-position: center;
-    z-index:10;
-    position:relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1; 
-  }
-
-.hero__text{
-    display:flex;
-    flex-direction: column;
-    width:max-content;
-    height: max-content;
-    color: var(--white-primary);
-    position: absolute;
-    top:10rem;
-    left: 4rem;
-    z-index: 10;
-    animation: moveAndFadeIn 1s forwards;
-}
-
-.hero__text > h2{
-    font-size: 3rem;
-  
-}
-
-.hero__contact{
-  display:flex;
+/* ==========================================================================
+   ContactHero Modern Styles
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 560px;
+  width: 100%;
+  display: flex;
   flex-direction: column;
-  width:max-content;
-  height: max-content;
-  color: var(--white-primary);
-  position: absolute;
-  top:10rem;
-  right: 5rem;
+  justify-content: center;
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
   z-index: 10;
-  animation: moveAndFadeContact 1s forwards;
+  /* Top padding clears the large header (7.2rem) completely */
+  padding-top: 7.2rem;
+  /* Bottom padding clears the reusable scroll indicator */
+  padding-bottom: 4rem;
+  box-sizing: border-box;
 }
 
-.hero__contact > h2{
-  font-size: 2rem;
-
+/* Cinematic Dark Overlay with Frosted Gradient */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(242, 7, 7, 0.14), transparent 50%),
+              linear-gradient(180deg, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0.92) 100%);
+  z-index: 1;
 }
 
-.hero__contact > h3{
-  font-size: 1.8rem;
-
+/* Ambient Red Glow Blob */
+.glowBlob {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 26rem;
+  height: 26rem;
+  background: radial-gradient(circle, rgba(242, 7, 7, 0.2) 0%, rgba(242, 7, 7, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
 }
 
+/* Main Container - auto margin vertically centers perfectly in available space */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto auto;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+  text-align: left;
+}
 
-@keyframes moveAndFadeIn {
-  0% {
-    transform: translate(+10rem, +10rem);
+/* Breadcrumb */
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-bottom: 0.65rem;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.breadcrumb:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(-2px);
+}
+
+.breadcrumbIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.breadcrumb:hover .breadcrumbIcon {
+  transform: translateX(-2px);
+}
+
+/* Eyebrow Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.95rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.badgePulse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+}
+
+.pulsePing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--red-primary, #F20707);
+  opacity: 0.75;
+  animation: pingAnimation 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.pulseDot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--red-primary, #F20707);
+}
+
+@keyframes pingAnimation {
+  75%, 100% {
+    transform: scale(2.4);
     opacity: 0;
-}
-50% {
-    transform: translate(+10rem, 0); 
-    opacity: 0.5;
-}
-/* 75% {
-    transform: translate(100px, -100px); 
-} */
-100% {
-    transform: translate(0, 0); 
-    opacity: 1;
-}
-}
-
-@keyframes moveAndFadeContact {
-  0% {
-    opacity: 0;
-    transform: translateY(+40rem); /* Inicia fuera de la pantalla a la izquierda */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Termina en su posición original */
   }
 }
 
+/* Title */
+.title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.75rem 0;
+}
 
+.titleAccent {
+  color: var(--red-primary, #F20707);
+  display: inline-block;
+  position: relative;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(0.95rem, 1.25vw, 1.075rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  margin: 0 0 1.25rem 0;
+  max-width: 720px;
+}
+
+/* Direct Contact Action Pills Row */
+.contactActionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.actionPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.actionPill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.actionPillWhatsapp {
+  background: rgba(37, 211, 102, 0.14);
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+
+.actionPillWhatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.actionPillWhatsapp:hover .actionIcon {
+  color: #ffffff;
+}
+
+.actionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red-primary, #F20707);
+  transition: color 0.2s ease;
+}
+
+.actionPillWhatsapp .actionIcon {
+  color: #25d366;
+}
+
+.actionText strong {
+  font-weight: 700;
+}
+
+.actionText span {
+  opacity: 0.75;
+  margin-left: 0.25rem;
+  font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .hero{
-flex-direction:column;
-}
-
-.hero__contact{
-  position: block;
-  top:16rem;
-  left: 4rem;
-}
-.hero__text{
-  position: block;
-  top:8rem;
-  left: 4rem;
-}
-
-.hero__contact h3{
-  font-size: 1.5rem;
-}
-
-.hero__contact h2{
-  font-size: 1.5rem;
-}
+  .hero {
+    padding-top: 4.8rem;
+    padding-bottom: 3.5rem;
   }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .title {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+  }
+
+  .subtitle {
+    font-size: 0.925rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .contactActionsRow {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .actionPill {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+  }
+}

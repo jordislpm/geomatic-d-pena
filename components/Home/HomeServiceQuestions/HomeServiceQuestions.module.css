@@ -1,25 +1,292 @@
-.content{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    width:100%;
-    background: var(--red-primary);
-    padding:2rem 4rem;
-    text-align:center;
+/* ==========================================================================
+   HomeServiceQuestions Modern CTA Banner Styles
+   ========================================================================== */
+.section {
+  position: relative;
+  width: 100%;
+  background: #F9F9F9;
+  padding: 4.5rem 2rem;
+  box-sizing: border-box;
 }
 
-.content h3{
-    color: var(--white-primary);
-    font-size: 1.4rem;
-    font-weight: 600;
+.bannerCard {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 1.75rem;
+  background: linear-gradient(135deg, #D40606 0%, #F20707 50%, #A80303 100%);
+  padding: 3.5rem 3rem;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(242, 7, 7, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  box-sizing: border-box;
 }
 
+/* Ambient Radial Glow & Watermark Geometry */
+.glowWatermark {
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 65%);
+  filter: blur(50px);
+  pointer-events: none;
+}
 
-@media screen and (max-width: 768px) {
-    .content{
-       flex-direction: column;
-       justify-content: center;
-       gap:2rem;
-       padding:1rem 2rem;
-    }
+.glowBlobLeft {
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Left Area: Text & Badges
+   -------------------------------------------------------------------------- */
+.textArea {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 0.775rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-size: clamp(1.85rem, 2.8vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.85rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Right Area: Action Buttons
+   -------------------------------------------------------------------------- */
+.actionsArea {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.buttonsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Light Button with Beacon Pulse Ring & Arrow Nudge */
+.primaryBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.65rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #ffffff;
+  white-space: nowrap;
+  animation: beaconPulse 2.6s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+/* Visually clear expanding pulse ring against red background */
+@keyframes beaconPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.75), 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+  65% {
+    box-shadow: 0 0 0 14px rgba(255, 255, 255, 0), 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.primaryBtn:hover {
+  animation: none;
+  background-color: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.btnArrowIcon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease;
+  animation: arrowNudge 2.6s ease-in-out infinite;
+}
+
+@keyframes arrowNudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+}
+
+.primaryBtn:hover .btnArrowIcon {
+  animation: none;
+  transform: translateX(4px);
+}
+
+.btnArrowIcon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.primaryBtn:hover .btnArrowIcon {
+  transform: translateX(3px);
+}
+
+/* WhatsApp Frosted Button */
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.65rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.whatsappBtn:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.whatsappIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* Call footnote */
+.callFootnote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.callFootnote:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.phoneIcon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 960px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .bannerCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 1.75rem;
+    gap: 2rem;
+  }
+
+  .actionsArea {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .buttonsGroup {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryBtn,
+  .whatsappBtn {
+    width: 100%;
+  }
+
+  .callFootnote {
+    align-self: center;
+  }
 }

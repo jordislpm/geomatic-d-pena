@@ -1,100 +1,296 @@
-.footer{
-    display:flex;
+/* ==========================================================================
+   Modern Footer Styles
+   ========================================================================== */
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #0E0E0E;
+  color: #E5E7EB;
+  padding: 5rem 2rem 3.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* 4-Column Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1.1fr 1.2fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Column 1: Brand Info & Contact
+   -------------------------------------------------------------------------- */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brandTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+  text-decoration: none;
+}
+
+.brandAccent {
+  color: var(--red-primary, #F20707);
+}
+
+.brandTagline {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1.5rem 0;
+  max-width: 320px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contactItem:hover {
+  color: #ffffff;
+}
+
+.contactIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--red-primary, #F20707);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  background-color: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #25D366;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.whatsappButton:hover {
+  background-color: #25D366;
+  color: #ffffff;
+  border-color: #25D366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+.whatsappIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   Columns 2 & 3: Navigation Links
+   -------------------------------------------------------------------------- */
+.colTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.colTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--red-primary, #F20707);
+  border-radius: 9999px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.navLinkActive {
+  color: var(--red-primary, #F20707);
+  font-weight: 600;
+}
+
+.linkArrow {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+  color: var(--red-primary, #F20707);
+}
+
+.navLink:hover .linkArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Column 4: Map & Headquarters
+   -------------------------------------------------------------------------- */
+.mapCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.mapDesc {
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1rem 0;
+}
+
+.mapWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 160px;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background-color: #1a1a1a;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: contrast(105%) brightness(95%);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Copyright Bar
+   -------------------------------------------------------------------------- */
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  /* Clearance on the right so the floating scroll-to-top button never covers text */
+  padding-right: 5.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-sizing: border-box;
+}
+
+.copyrightText {
+  margin: 0;
+}
+
+.locationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.775rem;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.locationDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--red-primary, #F20707);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .footer {
+    padding: 3.5rem 1.25rem 3.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bottomBar {
     flex-direction: column;
-    width:100%;
-    background: var(--black-secundary);
-    color: var(--gray-light);
-    padding: 2rem 4rem 2rem 4rem;
-}
-
-
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width:100%;
-    margin-bottom:2rem;
-    gap:2rem;
-}
-
-.info__contact h2{
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;    
-}
-
-.info__contact p{
-display: flex;
-align-items: start;
-gap:0.5rem;
-width:100%;
-height: auto;
-margin-bottom:1rem;
-}
-
-.info__contact_number{
-    padding: 2rem 0rem 0rem 2rem;
-    text-decoration: none; 
-    color: inherit;
-    display:flex;
-    align-items: center;
-    gap:1rem;
-}
-
-.info__options{
-display:flex;
-width:100%;
-gap:4rem;
-}
-
-.info__option h3{
-margin-bottom: 1.5rem;
-    }
-
-.footer__nav{
-display: flex;
-flex-direction: column;
-align-items: start;
-gap:1rem;
-}
-
-.link {
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    font-weight: 200;
-    color:var(--gray-light);
-    transition: padding 0.2s ease;
+    align-items: flex-start;
+    padding-right: 4.5rem;
+    gap: 0.85rem;
   }
 
-  .active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0.1rem;
-    background-color: var(--red-primary);
-    transition: width 0.3s;
+  .locationBadge {
+    white-space: normal;
+    line-height: 1.4;
   }
-
-  .active:hover::after {
-    width: 100%;
-  }
-
-
-
-@media screen and (max-width: 768px) {
-
-    .footer{
-        padding: 1rem 2rem 2rem 1rem;
-    }
-    .content{
-        flex-direction:column;
-    }
-    .info__options{
-        display:grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-  }
+}

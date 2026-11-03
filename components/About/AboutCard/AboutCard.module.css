@@ -1,43 +1,133 @@
-.card{
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    width:15rem;
-    height:12rem;
-    border: 1px solid var(--gray-primary);
-    color: var(--black-primary);
-    padding:1rem;
-    position: relative;
-    gap:1rem;
+/* ==========================================================================
+   Modern AboutCard Styles (Signature Protruding Red Circle Badge)
+   ========================================================================== */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.6rem 1.35rem 2.25rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-.card h2{
-    color: var(--black-primary);
+.card:hover {
+  transform: translateY(-3px) translateX(3px);
+  border-color: rgba(242, 7, 7, 0.28);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
 }
 
-.card p{
-    font-size: 0.8rem;
-    font-weight:300;
+/* --------------------------------------------------------------------------
+   Signature Protruding Red Circle Badge (Sticks outside the card)
+   -------------------------------------------------------------------------- */
+.indexBadge {
+  position: absolute;
+  left: -1.35rem;
+  top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red-primary, #F20707) 0%, #d00505 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 16px rgba(242, 7, 7, 0.38);
+  border: 3.5px solid #ffffff;
+  z-index: 3;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.index{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    position: absolute;
-    background: var(--red-primary);
-    color: var(--white-primary);
-    font-weight: 500;
-    width:3rem;
-    height: 3rem;
-    left:-1.5rem;
-    top: 0.8rem;
-    border-radius:50%;
+.card:hover .indexBadge {
+  transform: scale(1.12);
+  box-shadow: 0 6px 20px rgba(242, 7, 7, 0.52);
 }
 
-@media screen and (max-width: 768px) {
-    .card{
-        width:100%;
-        height:10rem;
-    }
+.indexNumber {
+  position: relative;
+  top: -0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Card Body Content
+   -------------------------------------------------------------------------- */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.card:hover .title {
+  color: var(--red-primary, #F20707);
+}
+
+.description {
+  font-size: 0.885rem;
+  line-height: 1.55;
+  color: #4b5563;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Subtle Bottom Highlight
+   -------------------------------------------------------------------------- */
+.bottomAccent {
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red-primary, #F20707), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .bottomAccent {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Adjustments
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 640px) {
+  .card {
+    padding: 1.25rem 1.25rem 1.25rem 1.85rem;
   }
+
+  .indexBadge {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: -1.2rem;
+    top: 1.15rem;
+    font-size: 0.875rem;
+    border-width: 3px;
+  }
+
+  .title {
+    font-size: 0.975rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}

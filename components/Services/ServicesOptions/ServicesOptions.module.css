@@ -1,41 +1,381 @@
-.main{
-    display: flex;
+/* ==========================================================================
+   ServicesOptions Modern Styles
+   ========================================================================== */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Modern Segmented Control / Pill Tabs
+   -------------------------------------------------------------------------- */
+.tabsContainer {
+  display: inline-flex;
+  align-items: center;
+  background-color: #F4F4F4;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+  padding: 0.35rem;
+  gap: 0.35rem;
+  margin-bottom: 3.5rem;
+  max-width: 100%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.tabButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4b5563;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.tabButton:hover:not(.tabButtonActive) {
+  color: #111111;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.tabButtonActive {
+  background-color: var(--red-primary, #F20707);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(242, 7, 7, 0.35);
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.tabCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.tabButtonActive .tabCount {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Active Group Info Banner
+   -------------------------------------------------------------------------- */
+.groupInfo {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.groupSubTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red-primary, #F20707);
+  margin-bottom: 0.45rem;
+}
+
+.groupDesc {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Service Cards Grid
+   -------------------------------------------------------------------------- */
+.catalog {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .tabsContainer {
+    width: 100%;
     flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    width:100%;
+    border-radius: 1.25rem;
+    padding: 0.45rem;
+  }
 
+  .tabButton {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 0.85rem;
+  }
+
+  .catalog {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.main__options{
-    display:flex;
-    margin-bottom: 2rem;
+/* --------------------------------------------------------------------------
+   Modern High-Converting CTA Banner
+   -------------------------------------------------------------------------- */
+.ctaBanner {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 5rem auto 0 auto;
+  padding: 4rem 3rem;
+  background: linear-gradient(145deg, #161616 0%, #111111 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.option{
-    background:var(--gray-light);
-    padding:1rem;
-    color: var(--black-primary);
-    cursor: pointer;
-    text-align: center;
+.ctaGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(ellipse 650px 320px at 50% 0%, rgba(242, 7, 7, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.option__active{
-    background:var(--red-primary);
-    color: var(--white-primary);
-    border-radius: 0.5rem 0.5rem 1px 1px;
+.ctaHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto 2.25rem auto;
 }
 
-.catalog{
-    display: grid;
-    width:100%;
-    height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:2rem;
-    justify-content: center;
-    align-items:center;
+.ctaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(242, 7, 7, 0.12);
+  border: 1px solid rgba(242, 7, 7, 0.28);
+  color: #ff5252;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.ctaBadgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--red-primary, #F20707);
+  box-shadow: 0 0 10px #F20707;
+}
+
+.ctaTitle {
+  color: #ffffff;
+  font-size: clamp(1.65rem, 2.7vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.15rem 0;
+}
+
+.ctaSubtitle {
+  color: #a3a3a3;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ctaActions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.45rem;
+  border-radius: 9999px;
+  background-color: #25D366;
+  color: #ffffff;
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.32);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsappBtn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.42);
+}
+
+.whatsappIcon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.quoteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background-color: var(--red-primary, #F20707);
+  color: #ffffff;
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(242, 7, 7, 0.32);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quoteBtn:hover {
+  background-color: #d00505;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 7, 7, 0.42);
+}
+
+.btnArrowIcon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quoteBtn:hover .btnArrowIcon {
+  transform: translateX(4px);
+}
+
+.ctaFooter {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #d1d5db;
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.phoneLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.phoneIcon {
+  width: 17px;
+  height: 17px;
+  stroke: var(--red-primary, #F20707);
+}
+
+.ctaTrustPills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #9ca3af;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+}
+
+.trustItem svg {
+  stroke: var(--red-primary, #F20707);
 }
 
 @media screen and (max-width: 768px) {
+  .ctaBanner {
+    padding: 2.5rem 1.25rem;
+    margin-top: 3rem;
+    border-radius: 1.5rem;
+  }
 
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .whatsappBtn,
+  .quoteBtn {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .ctaTrustPills {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
