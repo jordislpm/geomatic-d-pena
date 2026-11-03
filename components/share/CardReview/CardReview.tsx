@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styles from "./CardReview.module.css";
 import Image from 'next/image';
-import { CardReviewProps } from '../../../constants/reviews';
+import { CardReviewProps, formatRelativeTime } from '../../../constants/reviews';
 
 // Star SVG Component
 const StarIcon = () => (
@@ -47,11 +47,18 @@ function CardReview({
   name,
   rating = 5,
   text,
+  publishedAtDate,
+  time,
   publishAt,
   profile_photo_url,
   isLocalGuide,
 }: CardReviewProps) {
   const [imgError, setImgError] = useState(false);
+
+  // Compute exact dynamic relative date based on current date
+  const relativeDate = publishedAtDate || time
+    ? formatRelativeTime(publishedAtDate || time!)
+    : (publishAt || "Reciente");
 
   // Compute user initials as fallback
   const initials = name
@@ -112,7 +119,7 @@ function CardReview({
           <h3 className={styles.userName}>{name}</h3>
           <div className={styles.userMeta}>
             {isLocalGuide && <span className={styles.localGuideBadge}>Local Guide · </span>}
-            <span>{publishAt}</span>
+            <span>{relativeDate}</span>
           </div>
         </div>
       </div>
