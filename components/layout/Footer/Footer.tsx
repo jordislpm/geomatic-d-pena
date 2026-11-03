@@ -23,7 +23,7 @@ function Footer() {
           {/* Column 1: Brand & Direct Contact */}
           <div className={styles.brandCol}>
             <Link href="/" className={styles.brandTitle}>
-              Geomatic <span className={styles.brandAccent}>D' Peña</span>
+              Geomatic <span className={styles.brandAccent}>D&apos; Peña</span>
             </Link>
 
             <p className={styles.brandTagline}>

@@ -92,7 +92,7 @@ function CardReview({
       {/* Comment Body */}
       <div className={styles.comment}>
         {hasComment ? (
-          <p className={styles.commentText}>"{text}"</p>
+          <p className={styles.commentText}>{`"${text}"`}</p>
         ) : (
           <p className={styles.noCommentText}>Calificación de 5 estrellas en Google</p>
         )}
