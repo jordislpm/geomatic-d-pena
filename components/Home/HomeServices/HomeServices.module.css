@@ -8,6 +8,7 @@
   background: #FFFFFF;
   padding-top: 5rem;
   padding-bottom: 0;
+  margin-bottom: -1px;
   overflow: hidden;
 }
 
@@ -75,7 +76,7 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: none;
 }
 
 /* Each row takes 50% - 50% split seamlessly */
@@ -329,6 +330,11 @@
     border-left: none;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .row:last-child .contentWrapper,
+  .rowInverted:last-child .contentWrapper {
+    border-bottom: none;
   }
 
   .imageFloatingBadge {
