@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import FloatingButton from "@/components/share/FloatingButton/FloatingButton";
 import Script from "next/script";
+import { totalReviewsCount, averageRatingString } from "@/constants/reviews";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -195,8 +196,8 @@ const jsonLd = {
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "17",
+    "ratingValue": averageRatingString,
+    "reviewCount": String(totalReviewsCount),
     "bestRating": "5",
     "worstRating": "1"
   },

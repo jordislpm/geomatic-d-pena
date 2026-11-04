@@ -51,9 +51,11 @@
   color: #ffffff !important;
 }
 
-.nav__scroll {
-  padding: 0.45rem 1rem;
-  font-size: 0.9rem;
+@media screen and (min-width: 1025px) {
+  .nav__scroll {
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 .menu__burger {
@@ -84,7 +86,7 @@
   display: none;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1024px) {
   .desktopMenu {
     display: none;
   }

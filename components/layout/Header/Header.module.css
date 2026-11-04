@@ -9,6 +9,10 @@
     pointer-events: none;
 }
 
+/* ==========================================================================
+   Desktop styles (Default: > 1024px)
+   Full scroll animation (shrinking header, scaled logo, collapsing top bar)
+   ========================================================================== */
 .top__bar {
     pointer-events: auto;
     display: flex;
@@ -102,35 +106,40 @@
     color: var(--white-primary);
 }
 
-@media screen and (max-width: 900px) {
-    .header__nav {
-        padding: 0 2rem;
-    }
-
+/* ==========================================================================
+   Small Screens, Mobile & Tablet (<= 1024px)
+   STABLE FIXED HEADER:
+   - NO resize animation on scroll
+   - Fixed height 4.2rem at all times
+   - Constant logo size (2.5rem)
+   - No top bar jumping or collapsing
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
     .top__bar {
-        padding: 0 2rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .top__bar {
-        display: none;
+        display: none !important;
     }
 
-    .header__nav {
-        padding: 0 1.25rem;
-        height: 4.2rem;
-        background-color: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+    .header__nav,
+    .header__nav_top,
+    .header__nav_scroll {
+        height: 4.2rem !important;
+        padding: 0 1.25rem !important;
+        transition: background-color 0.25s ease, box-shadow 0.25s ease !important;
     }
 
-    .header__nav img {
-        height: 2.5rem;
-        width: auto;
+    .header__nav img,
+    .header__nav_scroll img {
+        height: 2.5rem !important;
+        width: auto !important;
+        transition: none !important;
+        transform: none !important;
     }
 
     .header__nav_scroll {
-        height: 3.8rem;
+        background-color: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     }
 }

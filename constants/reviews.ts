@@ -257,3 +257,23 @@ export const reviewsData: CardReviewProps[] = rawReviews.map((review) => ({
   ...review,
   publishAt: formatRelativeTime(review.publishedAtDate),
 }));
+
+// Dynamic statistics calculated across all reviews
+export const totalReviewsCount = rawReviews.length;
+
+export const averageRating = totalReviewsCount > 0
+  ? Math.round((rawReviews.reduce((sum, r) => sum + (r.rating || 5), 0) / totalReviewsCount) * 10) / 10
+  : 5.0;
+
+export const averageRatingString = averageRating.toFixed(1);
+
+export function getReviewsStats() {
+  const total = rawReviews.length;
+  const sum = rawReviews.reduce((acc, r) => acc + (r.rating || 5), 0);
+  const avg = total > 0 ? sum / total : 5.0;
+  return {
+    total,
+    average: Math.round(avg * 10) / 10,
+    averageString: avg.toFixed(1),
+  };
+}
