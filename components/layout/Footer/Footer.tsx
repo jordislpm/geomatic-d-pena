@@ -166,6 +166,10 @@ function Footer() {
             © {currentYear} {company_name}. Todos los derechos reservados.
           </p>
 
+          <p className={styles.copyrightText} style={{ fontSize: '0.8rem', opacity: 0.85 }}>
+            Desarrollado por <a href="https://www.jordisdev.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>jordisdev.com</a>
+          </p>
+
           <div className={styles.locationBadge}>
             <span className={styles.locationDot} />
             <span>Las Terrenas · Samaná · República Dominicana</span>
